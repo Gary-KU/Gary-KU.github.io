@@ -20,6 +20,6 @@ Google Fonts 是可选在线字体依赖，无法访问时使用系统字体。�
 
 ## VectorDrive 展示与声音
 
-`#vectordrive` 展示实际装配照片、PCB、上位机及短脉冲测试曲线，素材保存在 `dist/assets/vectordrive/`。测试范围与限制随指标一同展示。
+首页只展示简要项目卡片，点击 VectorDrive 后进入 `/vectordrive/` 独立工程详情页。`dist/vectordrive/index.html` 展示实际装配照片、PCB、上位机及短脉冲测试曲线，素材保存在 `dist/assets/vectordrive/`；详情样式与交互分别位于 `detail.css`、`detail.js`。测试范围与限制随指标一同展示。旧 `/#vectordrive` 链接定位首页项目卡片。
 
-`dist/sound.js` 提供原创 Web Audio 合成的 92 BPM Hip-hop 鼓点与浏览器项目旁白。默认静音，需要点击；两个模式互斥，切到后台自动停止。旁白使用设备可用的中文语音，不同浏览器音色可能不同。没有引入第三方音频文件。
+声音控件与 `dist/sound.css`、`dist/sound.js` 仅在工程详情页加载，首页不显示或加载声音功能。`dist/sound.js` 提供原创 Web Audio 合成的 92 BPM Hip-hop 鼓点与浏览器项目旁白。默认静音，需要点击；两个模式互斥，切到后台自动停止。旁白使用设备可用的中文语音，不同浏览器音色可能不同。没有引入第三方音频文件。

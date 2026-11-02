@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050609">
+<meta name="description" content="VectorDrive 2808 · 矢驱电机控制工程：四层板卡、STM32 FOC、中文 CAN 上位机与可复核的实板测试。">
+<title>VectorDrive 2808 · 矢驱 / GARY</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="detail.css">
+<link rel="stylesheet" href="../sound.css">
+</head>
+<body class="project-page">
+<a class="skip" href="#overview">跳到工程内容</a>
+<header class="project-header">
+<a class="logo" href="../" aria-label="返回 Gary 个人网站">GARY<span>↗</span></a>
+<nav aria-label="工程导航"><a href="../#projects">全部项目</a><a href="#gallery">工程图集</a><a href="https://github.com/Gary-KU/vectordrive-2808" target="_blank" rel="noopener">GITHUB ↗</a></nav>
+<span class="nav-status"><i></i> HARDWARE / FOC / CAN</span>
+</header>
+<main>
+<section id="overview" class="motor-feature" aria-labelledby="motor-title">
+<a class="project-back" href="../#projects">← 返回全部项目</a>
+<div class="motor-heading reveal"><div><p class="motor-kicker">PROJECT / HARDWARE & MOTOR CONTROL</p><h1 id="motor-title">VectorDrive 2808<span>矢驱 · 电机控制工程</span></h1></div><p>让电流，成为可控的力量。<br>从四层 PCB 到电流闭环，再到中文 CAN 上位机。</p></div>
+<div class="motor-intro"><a class="motor-assembly reveal" href="../assets/vectordrive/assembly.jpg" target="_blank" rel="noopener" aria-label="查看驱动板与电机装配原图"><img src="../assets/vectordrive/assembly.jpg" alt="多套 VectorDrive 圆形驱动板安装在电机上的实物照片" width="1280" height="2276" loading="lazy"><span>01 / 驱动板与电机装配实拍 ↗</span></a>
+<div class="motor-copy reveal"><div class="eyebrow">板卡 × 控制 × 上位机</div><h3>VectorDrive 2808<br><span>矢驱 · 小板，也有完整系统。</span></h3><p>基于 STM32F103C8T6、DRV8313 与 AS5600，采用双路低侧电流采样、d/q 电流 PI 和 SVPWM。板内执行控制闭环，PC 通过 CAN 更新目标、观察反馈和调整参数。</p><ul class="motor-stack"><li><span>硬件</span>四层 PCB / INA181A2 / 10 mΩ 分流采样</li><li><span>控制</span>24 kHz PWM / 2 kHz 电流环配置 / 速度外环</li><li><span>通信</span>1 Mbps CAN / 节点配置 / 断流停机</li><li><span>工具</span>中文 Windows 上位机 / 角度表盘 / 曲线与 CSV</li></ul><div class="motor-actions"><a class="button" href="https://github.com/Gary-KU/vectordrive-2808" target="_blank" rel="noopener"><span>查看完整开源工程</span><span>↗</span></a><a class="motor-text-link" href="https://github.com/Gary-KU/vectordrive-2808/releases/latest" target="_blank" rel="noopener">下载软件与固件 ↗</a></div></div></div>
+<div id="results" class="motor-metrics reveal" aria-label="实板测试摘要"><div><strong>195.4<span> Hz</span></strong><p>快速机械反馈实测</p></div><div><strong>2.76<span> ms</span></strong><p>CAN 请求 RTT 中位数</p></div><div><strong>±100<span> mA</span></strong><p>12 次短脉冲测试中的目标档位</p></div><div><strong>10.2–10.5<span> ms</span></strong><p>时钟修复后指令间隔中位数</p></div></div>
+<p class="motor-note reveal">2026-11-02 实板记录：短脉冲每次 0.22 s，±100 mA 平均反馈 +99.98 / −100.15 mA。上述通信指标来自单板测试；存在累计 TX 丢弃标志。高速限压、持续带载与温升仍待验证，速度外环未完成实板整定。<a href="https://github.com/Gary-KU/vectordrive-2808/blob/main/docs/CURRENT_DIAGNOSIS_20261102.md" target="_blank" rel="noopener">查看完整测试条件与原始证据 ↗</a></p>
+<div id="gallery" class="motor-gallery"><figure class="motor-wide reveal"><a href="../assets/vectordrive/desktop.png" target="_blank" rel="noopener"><img src="../assets/vectordrive/desktop.png" alt="中文 CAN 上位机连接节点 7，显示 323.78 度机械角，电机处于停机、驱动关闭状态" width="2550" height="1366" loading="lazy"></a><figcaption><span>02 / 中文 CAN 上位机</span>节点 7 实机反馈 · 截图时 STOP、驱动关闭 <b>↗</b></figcaption></figure>
+<figure class="reveal"><a href="../assets/vectordrive/current.png" target="_blank" rel="noopener"><img src="../assets/vectordrive/current.png" alt="12 次正负 50 mA 与 100 mA 短脉冲实测电流跟随曲线，保留原始波动" width="2520" height="1620" loading="lazy"></a><figcaption><span>03 / 原始电流反馈</span>三次重复 · 未平滑 · 点击查看曲线原图 <b>↗</b></figcaption></figure>
+<figure class="motor-pcb reveal"><a href="../assets/vectordrive/pcb.png" target="_blank" rel="noopener"><img src="../assets/vectordrive/pcb.png" alt="VectorDrive 圆形四层驱动板的 PCB 铜层与布线视图" width="1062" height="1071" loading="lazy"></a><figcaption><span>04 / PCB 布线视图</span>圆形板卡 · 紧凑器件布局 <b>↗</b></figcaption></figure></div>
+</section>
+<div class="detail-end"><a href="../#projects">← 返回全部项目</a><a href="https://github.com/Gary-KU/vectordrive-2808/releases/latest" target="_blank" rel="noopener">下载软件与固件 ↗</a></div>
+</main>
+<footer><a class="logo" href="../">GARY<span>↗</span></a><span>© <span id="year">2026</span> GARY-KU</span><a href="../#projects">ALL PROJECTS ↗</a><a href="#overview">BACK TO TOP ↑</a></footer>
+<aside class="sound-panel" aria-label="背景声音"><span id="sound-status" role="status">声音关闭</span><div><button id="beat-toggle" type="button" aria-pressed="false">RAP 鼓点</button><button id="narration-toggle" type="button" aria-pressed="false">项目旁白</button><button id="sound-stop" type="button" aria-label="关闭所有声音">静音</button></div></aside>
+<script src="detail.js"></script>
+<script src="../sound.js"></script>
+</body>
+</html>

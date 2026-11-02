@@ -4,14 +4,15 @@
   const voiceButton = document.querySelector('#narration-toggle');
   const stopButton = document.querySelector('#sound-stop');
   const status = document.querySelector('#sound-status');
+  if (!beatButton || !voiceButton || !stopButton || !status) return;
   let context, master, noise, timer, step = 0, nextTime = 0, mode = 'off', generation = 0;
   const activeSources = new Set();
   const sixteenth = 60 / 92 / 4;
-  const narration = '欢迎来到 Gary 的工程作品集。这里是 VectorDrive 二八零八，矢驱电机工程。'
+  const narration = '这里是 Gary 的 VectorDrive 二八零八，矢驱电机工程。'
     + '从四层电路板、焊接装配，到 STM 三二电流闭环和中文 CAN 上位机，把硬件和软件连成一套完整系统。'
     + '页面展示的照片、上位机截图和曲线，来自真实装配与实板记录。'
     + '短脉冲测试中，正负一百毫安目标的平均反馈接近目标。高速限压和持续带载能力，还在继续验证。'
-    + '向下探索项目，也可以在 GitHub 查看源码、下载软件和复现实验。';
+    + '向下了解工程细节，也可以在 GitHub 查看源码、下载软件和复现实验。';
 
   function update(label) {
     status.textContent = label;
