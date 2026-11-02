@@ -17,3 +17,9 @@ Gary-KU 的个人网站。原创航天视觉、Canvas 轨道球体、项目分�
 本地附带 `.github/workflows/pages.yml` 作为可选 Actions 配置，未上传到仓库（当前授权不包含 workflow 权限）。启用它前需要授权工作流写入，并将 Pages 来源改为 GitHub Actions。
 
 Google Fonts 是可选在线字体依赖，无法访问时使用系统字体。插画与轨道视觉均由本站代码绘制。
+
+## VectorDrive 展示与声音
+
+`#vectordrive` 展示实际装配照片、PCB、上位机及短脉冲测试曲线，素材保存在 `dist/assets/vectordrive/`。测试范围与限制随指标一同展示。
+
+`dist/sound.js` 提供原创 Web Audio 合成的 92 BPM Hip-hop 鼓点与浏览器项目旁白。默认静音，需要点击；两个模式互斥，切到后台自动停止。旁白使用设备可用的中文语音，不同浏览器音色可能不同。没有引入第三方音频文件。
